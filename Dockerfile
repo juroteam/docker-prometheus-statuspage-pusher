@@ -11,8 +11,9 @@ RUN apk add --no-cache git upx \
     && goupx prometheus-statuspage-pusher
 
 
-FROM busybox
+FROM alpine:3.12
 
+RUN apk add --no-cache ca-certificates
 COPY --from=0 /psp/prometheus-statuspage-pusher /
 
 ENTRYPOINT ["/prometheus-statuspage-pusher"]
