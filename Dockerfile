@@ -1,4 +1,4 @@
-FROM golang:1.17-alpine
+FROM golang:1.24-alpine
 ENV PSP_VERSION=1.0.1
 WORKDIR /psp
 RUN apk add --no-cache git upx \
