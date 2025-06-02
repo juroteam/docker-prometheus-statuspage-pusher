@@ -7,7 +7,7 @@ RUN apk add --no-cache git upx \
     && tar zxf psp.tar.gz \
     && goupx prometheus-statuspage-pusher
 
-FROM alpine:3.15
+FROM alpine:3.22
 RUN apk add --no-cache ca-certificates
 COPY --from=0 /psp/prometheus-statuspage-pusher /
 ENTRYPOINT ["/prometheus-statuspage-pusher"]
